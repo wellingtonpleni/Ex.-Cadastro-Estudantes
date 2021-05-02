@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cadastro } from '../cadastro'
+import { CADASTRO } from '../mock-estudantes';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,6 +9,8 @@ import { Cadastro } from '../cadastro'
 })
 
 export class CadastroComponent implements OnInit {
+
+  Cadastro = CADASTRO
 
   cadastro: Cadastro = {
     id: 1,
@@ -20,6 +23,11 @@ export class CadastroComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectedCadastro?: Cadastro;
+  onSelect(cadastro: Cadastro): void {
+    this.selectedCadastro = cadastro;
   }
 
 }

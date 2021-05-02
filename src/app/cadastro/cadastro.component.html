@@ -1,10 +1,18 @@
-<h2>{{cadastro.nome | uppercase}} Dados</h2>
-<div><span>id: </span>{{cadastro.id}}</div>
-<div><span>email: </span>{{cadastro.email}}</div>
-<div><span>endereço: </span>{{cadastro.endereco}}</div>
-<div><span>idade: </span>{{cadastro.idade}}</div>
-
-<div>
-    <label for="nome">Nome do Aluno: </label>
-    <input id="nome" [(ngModel)]="cadastro.nome" placeholder="nome">
+<div *ngIf="selectedCadastro">
+    <h2>{{selectedCadastro.nome | uppercase}} Dados</h2>
+    <div><span>Id: </span>{{selectedCadastro.id}}</div>
+    <div><span>Email: </span>{{selectedCadastro.email}}</div>
+    <div><span>Endereço: </span>{{selectedCadastro.endereco}}</div>
+    <div><span>Idade: </span>{{selectedCadastro.idade}}</div>
+    <div>
+        <label for="cadastro-nome">Nome aluno: </label>
+        <input id="cadastro-nome" [(ngModel)]="selectedCadastro.nome" placeholder="nome">
+    </div>
 </div>
+
+<h2>Estudantes</h2>
+<ul class="heroes">
+    <li *ngFor="let cadastro of Cadastro" [class.selected]="cadastro === selectedCadastro" (click)="onSelect(cadastro)">
+        <span class="badge">{{cadastro.id}}</span> {{cadastro.nome}}
+    </li>
+</ul>
