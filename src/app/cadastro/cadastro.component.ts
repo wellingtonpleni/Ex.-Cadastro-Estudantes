@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cadastro } from '../cadastro'
-import { CADASTRO } from '../mock-estudantes';
+import { CadastroService } from '../cadastro.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -10,24 +11,24 @@ import { CADASTRO } from '../mock-estudantes';
 
 export class CadastroComponent implements OnInit {
 
-  Cadastro = CADASTRO
-
-  cadastro: Cadastro = {
-    id: 1,
-    nome: 'Wellington',
-    email: 'wbr@fatec.sp.gov.br',
-    endereco: 'Rua 1',
-    idade: 36
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   selectedCadastro?: Cadastro;
+
+  cadastro: Cadastro[] = [];
+
+  constructor(private cadastroService: CadastroService, private messageService: MessageService) { }
+
+  ngOnInit() {
+    this.getCadastro();
+  }
+
   onSelect(cadastro: Cadastro): void {
     this.selectedCadastro = cadastro;
+    this.messageService.add(`CadastroComponent: Selected cadastro id=${cadastro.id}`);
+  }
+
+  getCadastro(): void {
+    this.cadastroService.getCadastro()
+        .subscribe(cadastro => this.cadastro = cadastro);
   }
 
 }
