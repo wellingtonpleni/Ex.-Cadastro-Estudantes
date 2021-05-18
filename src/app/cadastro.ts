@@ -1,6 +1,6 @@
 export interface Cadastro {
     id: number;
-    nome: string;
+    name: string;
     email: string;
     endereco: string;
     idade: number

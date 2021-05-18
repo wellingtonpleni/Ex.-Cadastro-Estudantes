@@ -1,8 +1,9 @@
-<app-cadastro-detail [cadastro]="selectedCadastro"></app-cadastro-detail>
-
 <h2>Alunos</h2>
+
 <ul class="heroes">
-    <li *ngFor="let cadastro of cadastro" [class.selected]="cadastro === selectedCadastro" (click)="onSelect(cadastro)">
-        <span class="badge">{{cadastro.id}}</span> {{cadastro.nome}}
+    <li *ngFor="let cadastro of cadastro">
+        <a routerLink="/detail/{{cadastro.id}}">
+            <span class="badge">{{cadastro.id}}</span> {{cadastro.name}}
+        </a>
     </li>
 </ul>

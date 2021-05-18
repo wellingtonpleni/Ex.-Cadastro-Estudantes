@@ -1,14 +1,14 @@
 import { Cadastro } from './cadastro';
 
 export const CADASTRO: Cadastro[] = [
-  { id: 11, nome: 'João', email: 'wbr', endereco: 'abc', idade: 25},
-  { id: 12, nome: 'Marcos', email: 'wbr', endereco: 'abc', idade: 25 },
-  { id: 13, nome: 'Maria', email: 'wbr', endereco: 'abc', idade: 25 },
-  { id: 14, nome: 'Carlos', email: 'wbr', endereco: 'abc', idade: 25 },
-  { id: 15, nome: 'Joana', email: 'wbr', endereco: 'abc', idade: 25 },
-  { id: 16, nome: 'Samuel', email: 'wbr', endereco: 'abc', idade: 25 },
-  { id: 17, nome: 'Carolina', email: 'wbr', endereco: 'abc', idade: 25 },
-  { id: 18, nome: 'Carla', email: 'wbr', endereco: 'abc', idade: 25 },
-  { id: 19, nome: 'Michele', email: 'wbr', endereco: 'abc', idade: 25 },
-  { id: 20, nome: 'Eduardo', email: 'wbr', endereco: 'abc', idade: 25 }
+  { id: 11, name: 'João', email: 'joao@fatec', endereco: 'abc', idade: 25},
+  { id: 12, name: 'Marcos', email: 'marcos@fatec', endereco: 'abc', idade: 28 },
+  { id: 13, name: 'Maria', email: 'maria@fatec', endereco: 'abc', idade: 33 },
+  { id: 14, name: 'Carlos', email: 'carlos@fatec', endereco: 'abc', idade: 19 },
+  { id: 15, name: 'Joana', email: 'joana@fatec', endereco: 'abc', idade: 18},
+  { id: 16, name: 'Samuel', email: 'samuel@fatec', endereco: 'abc', idade: 27 },
+  { id: 17, name: 'Carolina', email: 'carolina@fatec', endereco: 'abc', idade: 22 },
+  { id: 18, name: 'Carla', email: 'carla@fatec', endereco: 'abc', idade: 21 },
+  { id: 19, name: 'Michele', email: 'michele@fatec', endereco: 'abc', idade: 26 },
+  { id: 20, name: 'Eduardo', email: 'eduardo@fatec', endereco: 'abc', idade: 35 }
 ];

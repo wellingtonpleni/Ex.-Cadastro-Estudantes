@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Cadastro } from '../cadastro';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { CadastroService } from '../cadastro.service';
 
 @Component({
   selector: 'app-cadastro-detail',
@@ -8,11 +11,25 @@ import { Cadastro } from '../cadastro';
 })
 export class CadastroDetailComponent implements OnInit {
 
-  @Input() cadastro?: Cadastro;
+  cadastro?: Cadastro;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private cadastroService: CadastroService,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
+    this.getCadastro();
+  }
+  
+  getCadastro(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.cadastroService.getCadastroId(id).subscribe(cadastro => this.cadastro = cadastro);
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+  
 }

@@ -11,19 +11,12 @@ import { MessageService } from '../message.service';
 
 export class CadastroComponent implements OnInit {
 
-  selectedCadastro?: Cadastro;
-
   cadastro: Cadastro[] = [];
 
   constructor(private cadastroService: CadastroService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.getCadastro();
-  }
-
-  onSelect(cadastro: Cadastro): void {
-    this.selectedCadastro = cadastro;
-    this.messageService.add(`CadastroComponent: Selected cadastro id=${cadastro.id}`);
   }
 
   getCadastro(): void {

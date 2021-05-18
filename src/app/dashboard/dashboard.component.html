@@ -1,0 +1,6 @@
+<h2>Top Alunos</h2>
+<div class="heroes-menu">
+    <a *ngFor="let cadastro of cadastro" routerLink="/detail/{{cadastro.id}}">
+        {{cadastro.name}}
+    </a>
+</div>

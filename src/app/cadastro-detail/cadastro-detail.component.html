@@ -1,10 +1,15 @@
 <div *ngIf="cadastro">
 
-    <h2>{{cadastro.nome | uppercase}} Details</h2>
+    <h2>{{cadastro.name | uppercase}} Detalhes</h2>
     <div><span>id: </span>{{cadastro.id}}</div>
     <div>
-      <label for="cadastro-nome">Nome do Aluno: </label>
-      <input id="cadastro-nome" [(ngModel)]="cadastro.nome" placeholder="nome">
+      <label for="cadastro-name">Nome do Aluno: </label>
+      <input id="cadastro-name" [(ngModel)]="cadastro.name" placeholder="name">
     </div>
+    <div><span>email: </span>{{cadastro.email}}</div>
+    <div><span>idade: </span>{{cadastro.idade}}</div>
+    <div><span>endereco: </span>{{cadastro.endereco}}</div>
   
+    <button (click)="goBack()">Voltar</button>
+    
   </div>
