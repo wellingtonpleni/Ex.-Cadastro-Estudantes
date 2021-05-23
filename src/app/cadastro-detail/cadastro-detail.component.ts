@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cadastro } from '../cadastro';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -30,6 +30,13 @@ export class CadastroDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    if (this.cadastro) {
+      this.cadastroService.updateCadastro(this.cadastro)
+        .subscribe(() => this.goBack());
+    }
   }
   
 }

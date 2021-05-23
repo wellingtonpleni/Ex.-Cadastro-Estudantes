@@ -5,5 +5,16 @@
         <a routerLink="/detail/{{cadastro.id}}">
             <span class="badge">{{cadastro.id}}</span> {{cadastro.name}}
         </a>
+        <button class="delete" title="delete cadastro" (click)="delete(cadastro)">x</button>
     </li>
 </ul>
+
+<div>
+    <label for="new-aluno">Aluno name: </label>
+    <input id="new-aluno" #alunoName />
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="add-button" (click)="add(alunoName.value); alunoName.value=''">
+        Add aluno
+    </button>
+</div>
